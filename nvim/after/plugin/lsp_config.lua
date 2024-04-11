@@ -4,10 +4,10 @@ require('mason-lspconfig').setup({
     ensure_installed = {
         "clangd",
         "rust_analyzer",
-        "lua_ls",
-        "omnisharp",
+        "zls",
         "cmake",
-        "glsl_analyzer"}
+        "glsl_analyzer",
+    }
 })
 
 local on_attach = function(_, _)
@@ -24,13 +24,9 @@ local on_attach = function(_, _)
 end
 
 
-require("lspconfig").clangd.setup{
-    on_attach = on_attach
-}
-
-require("lspconfig").lua_ls.setup{
-    on_attach = on_attach
-}
+--require("lspconfig").clangd.setup{
+--    on_attach = on_attach
+--}
 
 require("lspconfig").rust_analyzer.setup{
     on_attach = on_attach

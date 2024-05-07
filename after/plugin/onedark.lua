@@ -1,7 +1,7 @@
  -- Lua
 require('onedark').setup  {
     -- Main options --
-    style = 'warmer', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+    style = 'dark', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
     transparent = true,  -- Show/hide background
     term_colors = true, -- Change terminal color as per the selected theme style
     ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
@@ -24,18 +24,30 @@ require('onedark').setup  {
 
     -- Lualine options --
     lualine = {
-        transparent = false, -- lualine center bar transparency
+        transparent = true, -- lualine center bar transparency
     },
 
     -- Custom Highlights --
     
     colors = {
-      yellow = '#CD950C',
-      purple = '#CD950C',
-      cyan = '#CD950C',
-      blue = '#CD950C',
-      light_blue = "#ffa006",
-      weird_green = "#ffa006"
+        yellow = '#dab98f',
+        purple = '#CD950C',
+        cyan = '#dab98f',
+        blue = '#dab98f',
+        orange = '#cd950c',
+        red = "#dab98f",
+        pink = "#dap98f",
+        darkgrey = '#dab98f',
+        light_blue = "#ffa006",
+        weird_green = "#ffa006",
+
+        fg =        "#dab98f",
+        grey =      "#dab98f",
+        light_grey= "#dab98f",
+        dark_cyan = "#dab98f",
+        dark_red =  "#dab98f",
+        dark_yellow="#dab98f",
+        dark_purple="#dab98f",
     }, -- Override default colors
     highlights = {
     }, -- Override highlight groups

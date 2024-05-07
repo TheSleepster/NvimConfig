@@ -43,6 +43,7 @@ require("lspconfig").glsl_analyzer.setup {
 require("lspconfig").ols.setup {
     on_attach = on_attach
 }
+
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 

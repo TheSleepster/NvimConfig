@@ -50,6 +50,7 @@ require("rose-pine").setup({
     highlight_groups = {
         -- Comment = { fg = "foam" },
         -- VertSplit = { fg = "muted", bg = "muted" },
+        Comment = {fg = "iris"},
     },
 
     before_highlight = function(group, highlight, palette)

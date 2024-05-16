@@ -2,7 +2,9 @@ require('mason').setup({})
 require('mason-lspconfig').setup({
 
     ensure_installed = {
-        "ols"
+        "ols",
+        "clangd",
+        "omnisharp"
     }
 })
 
@@ -19,12 +21,7 @@ local on_attach = function(_, _)
     vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end
 
-
---require("lspconfig").clangd.setup{
---    on_attach = on_attach
---}
-
-require("lspconfig").rust_analyzer.setup{
+require("lspconfig").clangd.setup{
     on_attach = on_attach
 }
 
@@ -32,15 +29,11 @@ require("lspconfig").omnisharp.setup{
     on_attach = on_attach
 }
 
-require("lspconfig").cmake.setup {
+require("lspconfig").ols.setup {
     on_attach = on_attach
 }
 
 require("lspconfig").glsl_analyzer.setup {
-    on_attach = on_attach
-}
-
-require("lspconfig").ols.setup {
     on_attach = on_attach
 }
 

@@ -1,8 +1,8 @@
  -- Lua
 require('onedark').setup  {
     -- Main options --
-    style = 'darker', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
-    transparent = true,  -- Show/hide background
+    style = 'warm', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+    transparent = false,  -- Show/hide background
     term_colors = true, -- Change terminal color as per the selected theme style
     ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
     cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
@@ -28,39 +28,91 @@ require('onedark').setup  {
     },
 
     -- Custom Highlights --
-    
     colors = {
-        yellow = '#dab98f',
+        yellow = '#CD950C',
         purple = '#CD950C',
         cyan = '#dab98f',
-        blue = '#dab98f',
-        orange = '#cd950c',
+        blue = '#ff5900',
+        orange = '#CD950C',
         red = "#dab98f",
-        pink = "#dap98f",
+        pink = "#dab98f",
         light_blue = "#ffa006",
-        weird_green = "#ffa006",
+        weird_green = "#431eb6",
         fg =        "#dab98f",
+        bg0 =       "#161616",
         grey =      "#5c6370",
-        light_grey= "#dap98f",
-        dark_cyan = "#dab98f",
-        dark_red =  "#dab98f",
-        dark_yellow="#dab98f",
-        dark_purple="#dab98f",
+        light_grey= "#dab98f",
+        dark_cyan = "#63a3ff",
+        dark_red =  "#63a3ff",
+        dark_yellow="#63a3ff",
+        dark_purple="#63a3ff",
     }, -- Override default colors
     highlights = {
+        ["@keyword"] = {fg = '#CD950C'},
+        ["@string"] = {fg = '#f4C430'},
+        ["@string.escape"] = {fg = "#6b8e23"},
+        ["@function"] = {fg = '#ff5900'},
+        ["@function.builtin"] = {fg = '#ff5900'},
+        ["@function.macro"] = {fg = '#dab98f'},
+        ["@function.method"] = {fg = '#dab98f'},
+
+        ["@keyword.operator"] = {fg = '#CD950C'},
+        ["@constant.macro"] = {fg = '#CD950C'},
+        ["@preproc"] = {fg = '#ff7a7b'},
+        ["@include"] = {fg = '#ff7a7b'},
+        ["@keyword.import"] = {fg = '#ff7a7b'},
+
+        ["@lsp.type.namespace"] =  {fg = '#63A3FF'},
+
+        ["@variable"] = {fg = '#dab98f'},
+        ["@variable.parameter"] = {fg = '#dab98f'},
+        ["@variable.member"] = {fg = '#dab98f'},
+        ["@variable.builtin"] = {fg = '#cd950c'},
+
+        ["@lsp.type.enumMember"] = {fg = '#1BFC06'},
+        ["@lsp.type.number"] = {fg = '#63A3FF'},
+        ["@lsp.type.interface"] = {fg = '#dab98f'},
+        ["@lsp.type.keyword"] = {fg = '#cd950c'},
+        ["@lsp.typemod.variable.static"] = {fg = '#cd950c'},
+        ["@lsp.type.macro"] =  {fg = '#63A3FF'},
+
+
+        Structure = {fg = '#CD950C'},
+        TSConstant =  {fg = '#8806ce'},
+        Typedef = {fg = '#8806ce'},
+        Include = {fg = '#ff7a7b'},
+        Define = {fg = '#ff7a7b'},
+
+        CursorLine  = {bg = "#191970"},
+        Cursor      = {fg = "#00fc5f"},
+        Special     = {fg = "#f4c430"},
+        String      = {fg = "#f4c430"},
+        SpecialChar = {fg = "#f4c430"},
+
+        ["@module"] = {fg = '#ff7a7b'},
+        ["@property"] = {fg = '#dab98f'},
+        ["@attribute"] = {fg = '#dab98f'},
+        ["@type"] = {fg = '#CD950C'},
+        ["@tag.attribute"] = {fg = '#CD950C'},
+
+
+        ["@lsp.type.struct"]     = {fg = "#CD950C"},   -- struct keyword
+        ["@lsp.type.variable"]   = {fg = "#dab98f"},  -- variable (like Apples when used as type)
+        ["@lsp.type.class"]      = {fg = "#CD950C"},  -- class/struct type
+        ["@lsp.mod.declaration"] = {fg = "#dab98f"},  -- class/struct type
     }, -- Override highlight groups
 
     -- Plugins Config --
     diagnostics = {
-        darker = true, -- darker colors for diagnostic
-        undercurl = true,   -- use undercurl instead of underline for diagnostics
-        background = true,    -- use background color for virtual text
+        darker = false, -- darker colors for diagnostic
+        undercurl = false,   -- use undercurl instead of underline for diagnostics
+        background = false,    -- use background color for virtual text
 
-        error = "$red",
-        hint = "$weird_green",
-        info = "$light_blue",
-        note = "$green",
-        todo = "$light_blue",
-        warn = "$yellow",
+        error = "#fc0505",
+        hint = "#41c101",
+        info = "#06dbcd",
+        note = "#41c101",
+        todo = "#06dbcd",
+        warn = "#dbc900",
     },
 }

@@ -41,10 +41,25 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
-vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/theprimeagen/packer.lua<CR>");
-vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
+-- My weird helper bindings
+vim.keymap.set("n", "<leader>n", "i// NOTE(Sleepster): ")
+vim.keymap.set("n", "<leader>t", "i// TODO(Sleepster): ")
+vim.keymap.set("n", "<leader>f", "i// FIX(Sleepster): ")
+
+vim.keymap.set("i", "<C-z>", " = {};")
+vim.keymap.set("i", "<C-b>",  "{}<Left><Enter><Enter><Up><Tab>")
+vim.keymap.set("i", "<C-s>", "{};<Left><Left><Enter><Enter><Up><Tab>")
+vim.keymap.set("i", "<C-x>", "{}break;<Left><Left><Left><Left><Left><Left><Left><Enter><Enter><Up><Tab>")
+
+-- LINE DUPLICATION
+vim.keymap.set("n", "<C-d>", "yyp")
+
+-- CUSTOM FUNCTION BINDS
+vim.keymap.set("n", '<A-m>',     ':Build<CR>',     {noremap = true, silent = true})
+vim.keymap.set("n", '<A-F12>',   ':DisplaySB<CR>', {noremap = true, silent = true})
+vim.keymap.set("n", '<A-S-F12>', ':DisplayOB<CR>', {noremap = true, silent = true})
+vim.keymap.set("n", '<C-f>', function() vim.api.nvim_feedkeys(":find ", "n", false) end, { noremap = true, silent = true })
 
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
-

@@ -1,5 +1,5 @@
 require("rose-pine").setup({
-    variant = "auto", -- auto, main, moon, or dawn
+    variant = "main", -- auto, main, moon, or dawn
     dark_variant = "main", -- main, moon, or dawn
     dim_inactive_windows = false,
     extend_background_behind_borders = true,
@@ -13,7 +13,7 @@ require("rose-pine").setup({
     styles = {
         bold = false,
         italic = false,
-        transparency = false,
+        transparency = true,
     },
 
     groups = {
@@ -22,9 +22,9 @@ require("rose-pine").setup({
         panel = "surface",
 
         error = "love",
-        hint = "pine",
+        hint = "love",
         info = "foam",
-        note = "iris",
+        note = "rose",
         todo = "rose",
         warn = "gold",
 
@@ -42,15 +42,14 @@ require("rose-pine").setup({
         h1 = "iris",
         h2 = "foam",
         h3 = "rose",
-        h4 = "iris",
-        h5 = "rose",
-        h6 = "gold",
+        h4 = "gold",
+        h5 = "pine",
+        h6 = "foam",
     },
 
     highlight_groups = {
-        -- Comment = { fg = "foam" },
-        -- VertSplit = { fg = "muted", bg = "muted" },
-        Comment = {fg = "iris"},
+        Comment = { fg = "#06ff92" },
+        VertSplit = { fg = "muted", bg = "muted" },
     },
 
     before_highlight = function(group, highlight, palette)
@@ -65,5 +64,3 @@ require("rose-pine").setup({
         -- end
     end,
 })
-
-vim.cmd("colorscheme rose-pine")

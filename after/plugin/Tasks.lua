@@ -6,7 +6,7 @@ function Sleepster_Build()
     local win_count = #vim.api.nvim_tabpage_list_wins(0)
     local current_buf = vim.api.nvim_get_current_buf()
 
-    vim.cmd('w')
+    vim.cmd('wa')
     if win_count < 2 then
         -- If there's only one window, create a vertical split
         vim.cmd('vsplit')
@@ -21,9 +21,47 @@ function Sleepster_Build()
         end
     end
 
-    vim.cmd('terminal cmd.exe /c "' .. filepath .. '"')
+    vim.cmd('terminal "' .. filepath .. '"')
 
     -- Switch back to the original buffer
+    vim.api.nvim_set_current_win(current_win)
+    vim.api.nvim_set_current_buf(current_buf)
+end
+
+
+function Sleepster_Run()
+    local cwd = vim.fn.getcwd()
+    local rundir = cwd .. "/../build/"
+    local exe_name = nil
+
+    local current_win = vim.api.nvim_get_current_win()
+    local win_count = #vim.api.nvim_tabpage_list_wins(0)
+    local current_buf = vim.api.nvim_get_current_buf()
+
+    local files = vim.fn.glob(rundir .. "*.exe", 0, 1)
+    if #files == 0 then
+        print("Your Money is NOT like like Lizzo, your pockets are anorexic")
+        return
+    end
+    exe_name = files[1]
+
+    -- Handle window setup (split if needed)
+    if win_count < 2 then
+        -- If there's only one window, create a vertical split
+        vim.cmd('vsplit')
+    else
+        -- If there are already two or more windows, switch to the other window
+        local wins = vim.api.nvim_tabpage_list_wins(0)
+        for _, win in ipairs(wins) do
+            if win ~= current_win then
+                vim.api.nvim_set_current_win(win)
+                break
+            end
+        end
+    end
+
+
+    vim.cmd('terminal"' .. exe_name .. '"')
     vim.api.nvim_set_current_win(current_win)
     vim.api.nvim_set_current_buf(current_buf)
 end
@@ -83,6 +121,7 @@ end
 vim.api.nvim_create_user_command('Build', Sleepster_Build, {})
 vim.api.nvim_create_user_command('DisplaySB', Sleepster_DisplayCorrespondingFileSameBuffer, {})
 vim.api.nvim_create_user_command('DisplayOB', Sleepster_DisplayCorrespondingFileOppositeBuffer, {})
+vim.api.nvim_create_user_command('Run', Sleepster_Run, {})
 
 
 function CustomHighlight()

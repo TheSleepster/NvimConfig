@@ -10,7 +10,6 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
 vim.opt.smartindent = true
-vim.opt.cursorline = true;
 
 vim.opt.wrap = false
 
@@ -28,7 +27,6 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = "no"
 vim.opt.isfname:append("@-@")
 
-vim.opt.updatetime = 144
 --vim.opt.colorcolumn = "80"
 
 --shows a menu while using tab completion

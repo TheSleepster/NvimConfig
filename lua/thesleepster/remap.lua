@@ -58,6 +58,7 @@ vim.keymap.set("n", "<C-d>", "yyp")
 vim.keymap.set("n", '<A-m>',     ':Build<CR>',     {noremap = true, silent = true})
 vim.keymap.set("n", '<A-F12>',   ':DisplaySB<CR>', {noremap = true, silent = true})
 vim.keymap.set("n", '<A-S-F12>', ':DisplayOB<CR>', {noremap = true, silent = true})
+vim.keymap.set("n", '<C-r>',     ':Run<CR>',       {noremap = true, silent = true})
 vim.keymap.set("n", '<C-f>', function() vim.api.nvim_feedkeys(":find ", "n", false) end, { noremap = true, silent = true })
 
 vim.keymap.set("n", "<leader><leader>", function()

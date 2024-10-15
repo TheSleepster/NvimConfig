@@ -94,7 +94,7 @@ require('onedark').setup  {
         ["@attribute"] = {fg = '#dab98f'},
         ["@type"] = {fg = '#CD950C'},
         ["@tag.attribute"] = {fg = '#CD950C'},
-
+        ["@operator"] = {fg = "#FF0000"},
 
         ["@lsp.type.struct"]     = {fg = "#CD950C"},   -- struct keyword
         ["@lsp.type.variable"]   = {fg = "#dab98f"},  -- variable (like Apples when used as type)

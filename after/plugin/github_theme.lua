@@ -39,10 +39,14 @@ require('github-theme').setup({
       -- ...
     },
   },
-  palettes = {},
+  palettes = {
+      cTodo = {fg = '#FF0000', bg = {}, bold = true},
+  },
   specs = {
   },
 
   groups = {
   },
+
+  vim.cmd('highlight Cursor guifg=#FFFFFF'),
 })

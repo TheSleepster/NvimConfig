@@ -95,6 +95,8 @@ require('onedark').setup  {
         ["@type"] = {fg = '#CD950C'},
         ["@tag.attribute"] = {fg = '#CD950C'},
         ["@operator"] = {fg = "#FF0000"},
+        ["@constant"] = {fg = "#00FF00"},
+        ["@constructor"] = {fg = "#ff5900", bold = false},
 
         ["@lsp.type.struct"]     = {fg = "#CD950C"},   -- struct keyword
         ["@lsp.type.variable"]   = {fg = "#dab98f"},  -- variable (like Apples when used as type)
@@ -109,10 +111,10 @@ require('onedark').setup  {
         background = false,    -- use background color for virtual text
 
         error = "#fc0505",
-        hint = "#41c101",
-        info = "#06dbcd",
-        note = "#41c101",
-        todo = "#06dbcd",
-        warn = "#dbc900",
+        hint  = "#41c101",
+        info  = "#06dbcd",
+        note  = "#41c101",
+        todo  = "#06dbcd",
+        warn  = "#dbc900",
     },
 }

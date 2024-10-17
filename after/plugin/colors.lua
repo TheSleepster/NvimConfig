@@ -1,9 +1,9 @@
 function ColorMyPencils(color)
     --color = color or "handmade_theme"
-    color = color or "vague"
+    color = color or "onedark"
 
     vim.cmd.colorscheme(color)
-    vim.cmd('highlight Cursor guifg=#FFFFFF')
+    vim.api.nvim_set_hl(0, "Cursor",              {fg = "#40ff40"});
 
     vim.api.nvim_set_hl(0, "Error",               {fg = "#FF0000", bold = true})
     vim.api.nvim_set_hl(0, "Todo",                {fg = "#FF0000", bold = true})
